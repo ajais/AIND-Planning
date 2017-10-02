@@ -449,10 +449,10 @@ class PlanningGraph():
         :param node_a2: PgNode_a
         :return: bool
         """
-
-        for precond_a1 in node_a1.parents:
-            for precond_a2 in node_a2.parents:
-                if precond_a1.is_mutex(precond_a2):
+        # TODO test for Competing Needs between nodes
+        for precond_1 in node_a1.parents:
+            for precond_2 in node_a2.parents:
+                if precond_1.is_mutex(precond_2):
                     return True
                 
         return False
