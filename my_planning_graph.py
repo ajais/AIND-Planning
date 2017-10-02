@@ -524,7 +524,7 @@ class PlanningGraph():
         """
         level_sum = 0
         goals = [PgNode_s(g, True) for g in self.problem.goal]
-        for g in :
+        for g in goals:
             if g not in self.s_levels[-1]:
                 print('Unsolvable')
                 level_sum = float('inf')
