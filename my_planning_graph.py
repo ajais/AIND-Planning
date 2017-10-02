@@ -489,6 +489,8 @@ class PlanningGraph():
         :param node_s2: PgNode_s
         :return: bool
         """
+        # TODO test for negation between nodes
+        
         return node_s1.symbol == node_s2.symbol and node_s1.is_pos != node_s2.is_pos
 
     def inconsistent_support_mutex(self, node_s1: PgNode_s, node_s2: PgNode_s):
@@ -507,9 +509,10 @@ class PlanningGraph():
         :param node_s2: PgNode_s
         :return: bool
         """
-        for precond_s1 in node_s1.parents:
-            for precond_s2 in node_s2.parents:
-                if not precond_s1.is_mutex(precond_s2):
+        # TODO test for Inconsistent Support between nodes
+        for precond_1 in node_s1.parents:
+            for precond_2 in node_s2.parents:
+                if not precond_1.is_mutex(precond_2):
                     return False
 
         return True
